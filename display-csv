@@ -1,0 +1,15 @@
+#!/bin/env ruby
+require 'csv'
+
+STDIN.each_line() do |l|
+  CSV.parse(l)  do |row|
+    out = String.new()
+    ARGV.each do |i|
+     i = i.to_i
+     out = out + "#{row[i]}\t"
+    end
+    puts out ;
+  end
+
+
+end
